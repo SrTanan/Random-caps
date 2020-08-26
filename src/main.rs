@@ -13,9 +13,8 @@ fn main() {
         let mut output = String::new();
         for i in 0..byte_array.len() {
             if String::from_utf8(vec![byte_array[i]]).ok().is_some() == false {
-                println!("Error: Invalid characters.");
-                output = String::new(); //Reset string so it doesn't print everything until the error occurs.
-                break;
+                println!("WARniNg: IGnorInG INVAliD cHaRaCTeRS");
+                continue; 
             }
 
             if rng.gen::<f32>() < 0.5 {
