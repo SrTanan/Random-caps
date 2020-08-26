@@ -13,9 +13,11 @@ fn main() {
         let mut output = String::new();
         let mut invalid_characters = false;
         for i in 0..byte_array.len() {
-            if String::from_utf8(vec![byte_array[i]]).ok().is_some() == false && invalid_characters == false {
-                println!("WARniNg: IGnorInG INVAliD cHaRaCTeRS");
-                invalid_characters = true;
+            if String::from_utf8(vec![byte_array[i]]).ok().is_some() == false {
+                if invalid_characters == false {
+                    println!("WARniNg: IGnorInG INVAliD cHaRaCTeRS");
+                    invalid_characters = true;
+                }
                 continue; 
             }
 
